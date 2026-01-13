@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "pipbrowser",
+	"version": "${version}",
+	"name": "MineChromium",
+	"description": "Adds a Picture-in-Picture web browser to Minecraft.",
+	"authors": [
+		"Zylr"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/pipbrowser/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.zylr.pipbrowser.PIPBrowser"
+		],
+		"client": [
+			"com.zylr.pipbrowser.PIPBrowserClient"
+		]
+	},
+	"mixins": [
+		"pipbrowser.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

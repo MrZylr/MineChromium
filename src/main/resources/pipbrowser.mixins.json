@@ -1,0 +1,17 @@
+{
+	"required": true,
+	"package": "com.zylr.pipbrowser.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"AbstractContainerScreenMixin",
+		"IngredientGridWithNavigationMixin",
+		"IngredientListOverlayMixin"
+	],
+	"mixins": [],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
