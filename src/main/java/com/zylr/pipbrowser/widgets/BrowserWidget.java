@@ -20,8 +20,6 @@ public class BrowserWidget extends Widget {
     private String currentUrl;
     private String initialUrl;
     private float opacity = 0.8f; // 80% opacity (20% transparent)
-    // Browser audio volume (0.0 - 1.0)
-    public float browserVolume = 1.0f;
 
     public BrowserWidget(int x, int y, int width, int height, String initialUrl) {
         this.anchorX = x;
@@ -33,16 +31,7 @@ public class BrowserWidget extends Widget {
         this.type = WidgetType.BROWSER;
         this.setupConfig();
         this.initialUrl = initialUrl;
-        // Load browser volume from main config if present
-        try {
-            Properties mainConfig = MainProperties.getConfig();
-            if (mainConfig != null) {
-                String volStr = mainConfig.getProperty("browserVolume", Float.toString(this.browserVolume));
-                this.browserVolume = Float.parseFloat(volStr);
-            }
-        } catch (Throwable t) {
-            // ignore and keep default
-        }
+
         initializeBrowser();
 
         this.relativeAnchorx = Double.parseDouble(config.getProperty("x", "0"));
